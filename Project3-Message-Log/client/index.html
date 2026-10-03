@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Message Log</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <main>
+            <h1>Message Log</h1>
+
+            <form id="messageForm">
+                <label for="messageInput">Enter a message:</label>
+
+                <textarea
+                    id="messageInput"
+                    name="message"
+                    rows="5"
+                    placeholder="Type your message here..."
+                    required
+                ></textarea>
+
+                <button type="submit">Add Message</button>
+            </form>
+
+            <section>
+                <h2>Messages</h2>
+
+                <ul id="messageList">
+                    <!-- Messages will be added here by JavaScript -->
+                </ul>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
