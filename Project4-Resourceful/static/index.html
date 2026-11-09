@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kingdom Hearts Enemy Database</title>
+        <link rel="stylesheet" href="style.css">
+        </head>
+    
+    <body>
+
+        <header>
+            <h1>Kingdom Hearts Enemy Database</h1>
+        </header>
+
+        <main>
+
+            <section id="admin-section">
+                <h2>Administrator Login</h2>
+
+                <form id="login-form">
+                    <label for="admin-password">Password:</label>
+                    <input
+                        type="password"
+                        id="admin-password"
+                        required
+                    >
+
+                    <button type="submit">Log In</button>
+                </form>
+
+                <p id="login-message"></p>
+
+                <button id="logout-button" hidden>Log Out</button>
+            </section>
+
+            <section id="enemy-form-section" hidden>
+                <h2 id="enemy-form-title">Add an Enemy</h2>
+
+                <form id="enemy-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+
+                    <label for="story-phase">Story Phase:</label>
+                    <select id="story-phase" name="story_phase" required>
+                        <option value="Before_HB">Before Hollow Bastion</option>
+                        <option value="After_HB">After Hollow Bastion</option>
+                    </select>
+
+                    <label for="hp">HP:</label>
+                    <input type="number" id="hp" name="hp" min="0" required>
+
+                    <label for="attack">Attack:</label>
+                    <input type="number" id="attack" name="attack" min="0" required>
+
+                    <label for="defense">Defense:</label>
+                    <input type="number" id="defense" name="defense" min="0" required>
+
+                    <label for="mp-recovery">MP Recovery:</label>
+                    <input type="number" id="mp-recovery" name="mp_recovery" min="0" required>
+
+                    <label for="exp">EXP:</label>
+                    <input type="number" id="exp" name="exp" min="0" required>
+
+                    <label for="worlds">Worlds (comma-separated):</label>
+                    <input type="text" id="worlds" name="worlds" required>
+
+                    <label for="drops">Drops (comma-separated):</label>
+                    <input type="text" id="drops" name="drops" required>
+
+                    <button type="submit" id="enemy-submit-button">Add Enemy</button>
+                    <button type="button" id="cancel-edit-button" hidden>Cancel Edit</button>
+
+                </form>
+
+                <p id="enemy-form-message"></p>
+            </section>
+
+            <section id="browse-section">
+                <h2>Browse Enemies</h2>
+
+                <div class="browse-controls">
+                    <div>
+                        <label for="enemy-search">Search by Name:</label>
+                        <input
+                            type="search"
+                            id="enemy-search"
+                            placeholder="Enter an enemy name..."
+                        >
+                    </div>
+
+                    <div>
+                        <label for="world-filter">Filter by World:</label>
+                        <select id="world-filter">
+                            <option value="">All Worlds</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="drop-filter">Filter by Drop:</label>
+                        <select id="drop-filter">
+                            <option value="">All Drops</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="phase-filter">Filter by Story Phase:</label>
+                        <select id="phase-filter">
+                            <option value="">All Story Phases</option>
+                            <option value="Before_HB">Before Hollow Bastion</option>
+                            <option value="After_HB">After Hollow Bastion</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="sort-by">Sort By:</label>
+                        <select id="sort-by">
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="hp-asc">HP (Low to High)</option>
+                            <option value="hp-desc">HP (High to Low)</option>
+                            <option value="attack-asc">Attack (Low to High)</option>
+                            <option value="attack-desc">Attack (High to Low)</option>
+                            <option value="defense-asc">Defense (Low to High)</option>
+                            <option value="defense-desc">Defense (High to Low)</option>
+                            <option value="exp-asc">EXP (Low to High)</option>
+                            <option value="exp-desc">EXP (High to Low)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="clear-filters-button">
+                        Clear Filters
+                    </button>
+                </div>
+
+                <p id="results-count"></p>
+            </section>
+
+
+            <section id="enemy-list">
+                <p>Loading enemies...</p>
+            </section>
+
+        </main>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
